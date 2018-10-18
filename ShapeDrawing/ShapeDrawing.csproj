@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
+    <Compile Include="DrawCanvas.cs" />
+    <Compile Include="DrawMethods.cs" />
+    <Compile Include="DrawSVG.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Rectangle.cs" />
     <Compile Include="Shape.cs" />

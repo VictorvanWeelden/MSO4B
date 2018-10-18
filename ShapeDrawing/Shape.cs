@@ -1,13 +1,17 @@
 using System;
 using System.Drawing;
 
-public abstract class Shape
+namespace ShapeDrawing
 {
+    public abstract class Shape
+    {
+        
+    DrawMethods Methods;
+    public Shape()
+        {
+        }
 
-	public Shape()
-	{
-	}
+        public abstract void Draw(Graphics Canvas);
 
-    public abstract void Draw(Graphics Canvas);
-	
+    }
 }
