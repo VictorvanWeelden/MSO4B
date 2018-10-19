@@ -6,7 +6,6 @@ namespace ShapeDrawing
     public abstract class Shape
     {
         DrawMethods DM;
-        Graphics G;
 
         public Shape()
         {
@@ -14,12 +13,12 @@ namespace ShapeDrawing
 
         public abstract void Draw(Graphics Canvas);
 
-        public virtual void Canvas_SVG(int x)
+        public virtual void Canvas_SVG(Graphics Canvas, int x)
         {
             if (x == 1)
                 DM = new DrawSVG();
             else
-                DM = new DrawCanvas(G);
+                DM = new DrawCanvas(Canvas);
         }
     }
 }

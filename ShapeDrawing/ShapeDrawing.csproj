@@ -79,7 +79,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SVG.txt" />
+    <Content Include="SVG.svg" />
     <Content Include="V1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
