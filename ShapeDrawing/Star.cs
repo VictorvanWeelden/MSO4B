@@ -24,7 +24,7 @@ namespace ShapeDrawing
 
         public override void Draw(Graphics Canvas, Pen pen)// parameter pen toegevoegd
         {
-            //Pen pen = new Pen(Color.Black);
+            CalculatePoints();
             for (int i = 0; i < numPoints; i++)
             {
                 Canvas.DrawLine(pen, pts[i].X,
@@ -35,7 +35,7 @@ namespace ShapeDrawing
 
         }
 
-        void CalculatePoint()// Calculate methode toegevoegd
+        void CalculatePoints()// Calculate methode toegevoegd
         {
 
             double rx = width / 2;
