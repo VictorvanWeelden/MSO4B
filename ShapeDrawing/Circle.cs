@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ShapeDrawing
 {
@@ -23,7 +20,7 @@ namespace ShapeDrawing
         public override void Draw(Graphics Canvas)
         {
             Pen pen = new Pen(Color.Black);
-            Canvas.DrawEllipse(pen, this.x, this.y, this.size, this.size);
+            Canvas.DrawEllipse(pen, x, y, size, size);
         }
 
     }

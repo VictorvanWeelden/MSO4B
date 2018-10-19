@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ namespace ShapeDrawing
 {
     public class ShapeDrawingForm : Form
     {
-        private List<Shape> shapes;
+        private List<Shape> shapes;        
 
         public ShapeDrawingForm()
         {
@@ -18,12 +17,12 @@ namespace ShapeDrawing
 
             ToolStripDropDownItem menu;
             menu = new ToolStripMenuItem("File");
-            menu.DropDownItems.Add("Open...", null, this.openFileHandler);
-            menu.DropDownItems.Add("Export...", null, this.exportHandler);
-            menu.DropDownItems.Add("Exit", null, this.closeHandler);
+            menu.DropDownItems.Add("Open...", null, openFileHandler);
+            menu.DropDownItems.Add("Export...", null, exportHandler);
+            menu.DropDownItems.Add("Exit", null, closeHandler);
             menuStrip.Items.Add(menu);
 
-            this.Controls.Add(menuStrip);
+            Controls.Add(menuStrip);
             // Some basic settings
             Text = "Shape Drawing and Converter";
             Size = new Size(400, 400);
@@ -34,13 +33,13 @@ namespace ShapeDrawing
             shapes = new List<Shape>();
 
             // Listen to Paint event to draw shapes
-            this.Paint += new PaintEventHandler(this.OnPaint);
+            Paint += new PaintEventHandler(OnPaint);
         }
 
         // What to do when the user closes the program
         private void closeHandler(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         // What to do when the user opens a file
@@ -52,7 +51,7 @@ namespace ShapeDrawing
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 shapes = Parser.ParseShapes(dialog.FileName);
-                this.Refresh();
+                Refresh();
             }
 
         }
@@ -86,6 +85,6 @@ namespace ShapeDrawing
             // Draw all the shapes
             foreach (Shape shape in shapes)
                 shape.Draw(e.Graphics);
-        }
+        }        
     }
 }
