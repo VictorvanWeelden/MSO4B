@@ -83,8 +83,9 @@ namespace ShapeDrawing
         private void OnPaint(object sender, PaintEventArgs e)
         {
             // Draw all the shapes
+            Pen pen = new Pen(Color.Black); // pen toegevoegd
             foreach (Shape shape in shapes)
-                shape.Draw(e.Graphics);
+                shape.Draw(e.Graphics, pen);
         }        
     }
 }

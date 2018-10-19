@@ -11,7 +11,7 @@ namespace ShapeDrawing
         {
         }
 
-        public abstract void Draw(Graphics Canvas);
+        public abstract void Draw(Graphics Canvas, Pen pen);
 
         public virtual void Canvas_SVG(Graphics Canvas, int x)
         {

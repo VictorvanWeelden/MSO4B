@@ -16,9 +16,8 @@ namespace ShapeDrawing
             this.size = size;
         }
 
-        public override void Draw(Graphics Canvas)
+        public override void Draw(Graphics Canvas, Pen pen)
         {
-            Pen pen = new Pen(Color.Black);
             Canvas.DrawEllipse(pen, x, y, size, size);
         }
     }
