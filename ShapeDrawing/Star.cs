@@ -11,7 +11,7 @@ namespace ShapeDrawing
         private int width;
         private int height;
         int numPoints = 5;
-        Point[] pts;// = new Point[numPoints];
+        Point[] pts;// uit de methode gehaald
 
         public Star(int x, int y, int width, int height)
         {
@@ -27,10 +27,8 @@ namespace ShapeDrawing
             CalculatePoints();
             for (int i = 0; i < numPoints; i++)
             {
-                Canvas.DrawLine(pen, pts[i].X,
-                                    pts[i].Y,
-                                    pts[(i + 1) % numPoints].X,
-                                    pts[(i + 1) % numPoints].Y);
+                Canvas.DrawLine(pen, pts[i].X, pts[i].Y,
+                       pts[(i + 1) % numPoints].X, pts[(i + 1) % numPoints].Y);
             }
 
         }

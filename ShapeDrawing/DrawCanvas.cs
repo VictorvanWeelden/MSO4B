@@ -17,10 +17,6 @@ namespace ShapeDrawing
         {
             base.DrawLines();
         }
-        public override void DrawRectangle()
-        {
-            base.DrawRectangle();
-        }
         public override void DrawCircle()
         {
             base.DrawCircle();

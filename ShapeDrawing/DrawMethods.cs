@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ShapeDrawing
 {
-    class DrawMethods
+    abstract class DrawMethods
     {
         public DrawMethods()
         {
@@ -16,13 +16,8 @@ namespace ShapeDrawing
         {
 
         }
-        public virtual void DrawRectangle()
-        {
 
-        }
-        public virtual void DrawCircle()
-        {
-
-        }
+        public abstract void DrawCircle();
+        
     }
 }
