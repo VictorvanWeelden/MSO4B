@@ -12,11 +12,9 @@ namespace ShapeDrawing
 
         public ShapeDrawingForm()
         {
-            MenuStrip menuStrip;
-            menuStrip = new MenuStrip();
+            MenuStrip menuStrip = new MenuStrip();// korter gemaakt
 
-            ToolStripDropDownItem menu;
-            menu = new ToolStripMenuItem("File");
+            ToolStripDropDownItem menu = new ToolStripMenuItem("File");// ook korter gemaakt
             menu.DropDownItems.Add("Open...", null, openFileHandler);
             menu.DropDownItems.Add("Export...", null, exportHandler);
             menu.DropDownItems.Add("Exit", null, closeHandler);
@@ -53,7 +51,6 @@ namespace ShapeDrawing
                 shapes = Parser.ParseShapes(dialog.FileName);
                 Refresh();
             }
-
         }
 
         // What to do when the user wants to export a TeX file
