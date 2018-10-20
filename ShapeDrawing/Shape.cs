@@ -13,12 +13,12 @@ namespace ShapeDrawing
 
         public abstract void Draw(Graphics Canvas, Pen pen);
 
-        public virtual void Canvas_SVG(Graphics Canvas, int x)
+        public virtual void Canvas_SVG(Graphics Canvas, int x, Pen pen)
         {
             if (x == 1)
                 DM = new DrawSVG();
             else
-                DM = new DrawCanvas(Canvas);
+                DM = new DrawCanvas(Canvas, pen);
         }
     }
 }

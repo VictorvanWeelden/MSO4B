@@ -12,12 +12,9 @@ namespace ShapeDrawing
         {
         }
         //enige overeenkomstige methodes moeten hier
-        public virtual void DrawLines()
-        {
+        public abstract void DrawLines(Pen pen, int x1, int y1, int x2, int y2);
 
-        }
-
-        public abstract void DrawCircle();
+        public abstract void DrawCircle(Pen pen, int x, int y, int r);
         
     }
 }
