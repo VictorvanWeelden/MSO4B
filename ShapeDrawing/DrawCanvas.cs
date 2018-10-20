@@ -24,7 +24,7 @@ namespace ShapeDrawing
             Canvas.DrawEllipse(pen, x, y, r, r);
         }
 
-        public void DrawRecangle(Pen pen, int x, int y, int h, int w)
+        public override void DrawRectangle(Pen pen, int x, int y, int h, int w)
         {
             DrawLines(pen, x, y, x + w, y);
             DrawLines(pen, x + w, y, x + w, y + h);
