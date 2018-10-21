@@ -19,6 +19,7 @@ namespace ShapeDrawing
 
         public void Draw(Graphics Canvas, Pen pen)
         {
+            //DM.DrawCircle(pen, x, y, size);
             Canvas.DrawEllipse(pen, x, y, size, size);
         }
     }

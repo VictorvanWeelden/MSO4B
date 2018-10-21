@@ -21,6 +21,7 @@ namespace ShapeDrawing
 
         public void Draw(Graphics Canvas, Pen pen)
         {
+            //DM.DrawRectangle(pen, x, y, height, width);
             Canvas.DrawLine(pen, x, y, x + width, y);
             Canvas.DrawLine(pen, x + width, y, x + width, y + height);
             Canvas.DrawLine(pen, x + width, y + height, x, y + height);
