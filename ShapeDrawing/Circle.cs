@@ -5,6 +5,7 @@ namespace ShapeDrawing
 {
     class Circle : Shape
     {
+        public DrawMethods DM;
         private int x;
         private int y;
         private int size;

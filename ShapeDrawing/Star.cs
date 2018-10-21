@@ -5,7 +5,7 @@ namespace ShapeDrawing
 {
     public class Star : Shape
     {
-
+        public DrawMethods DM;
         private int x;
         private int y;
         private int width;

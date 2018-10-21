@@ -5,7 +5,7 @@ namespace ShapeDrawing
 {
     class Rectangle : Shape
     {
-
+        public DrawMethods DM;
         private int x;
         private int y;
         private int width;
