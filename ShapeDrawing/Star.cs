@@ -22,7 +22,7 @@ namespace ShapeDrawing
             pts = new Point[numPoints];
         }
 
-        public override void Draw(Graphics Canvas, Pen pen)// parameter pen toegevoegd
+        public void Draw(Graphics Canvas, Pen pen)// parameter pen toegevoegd
         {
             CalculatePoints();
             for (int i = 0; i < numPoints; i++)

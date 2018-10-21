@@ -19,7 +19,7 @@ namespace ShapeDrawing
             this.height = height;
         }
 
-        public override void Draw(Graphics Canvas, Pen pen)
+        public void Draw(Graphics Canvas, Pen pen)
         {
             Canvas.DrawLine(pen, x, y, x + width, y);
             Canvas.DrawLine(pen, x + width, y, x + width, y + height);

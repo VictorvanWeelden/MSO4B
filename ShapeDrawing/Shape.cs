@@ -3,22 +3,8 @@ using System.Drawing;
 
 namespace ShapeDrawing
 {
-    public abstract class Shape
+    public interface Shape
     {
-        DrawMethods DM;
-
-        public Shape()
-        {
-        }
-
-        public abstract void Draw(Graphics Canvas, Pen pen);
-
-        public virtual void Canvas_SVG(Graphics Canvas, int x, Pen pen)
-        {
-            if (x == 1)
-                DM = new DrawSVG();
-            else
-                DM = new DrawCanvas(Canvas, pen);
-        }
+        void Draw(Graphics Canvas, Pen pen);
     }
 }
