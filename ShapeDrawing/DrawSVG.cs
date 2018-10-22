@@ -14,12 +14,12 @@ namespace ShapeDrawing
         //implementeer SVG schrijven
         public void DrawLines(Pen pen, int x1, int y1, int x2, int y2)
         {           
-            regels = "< line x1 = \"" + x1 + "\" y1 = \"" + y1 + "\" x2 = \"" + x2 + "\" y2 = \"" + y2 + " style = \"stroke:rgb(0,0,0);stroke-width:2\" />";
+            regels = "<line x1 = \"" + x1 + "\" y1 = \"" + y1 + "\" x2 = \"" + x2 + "\" y2 = \"" + y2 + " style = \"stroke:rgb(0,0,0);stroke-width:1\" />";
             text.Add(regels);         
         }
         public void DrawRectangle(Pen pen, int x, int y, int w, int h)
         {
-            regels = "< rect x = \"" + x + "\" y = \"" + y + "\" width = \"" + w + "\" height = \"" + h + " \"style = \"fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)\" />";
+            regels = "<rect x = \"" + x + "\" y = \"" + y + "\" width = \"" + w + "\" height = \"" + h + " \"style = \"fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)\" />";
             text.Add(regels);
         }
         public void DrawCircle(Pen pen, int x, int y, int r)

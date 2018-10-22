@@ -10,17 +10,16 @@ namespace ShapeDrawing
     {
         private List<Shape> shapes;
         public DrawMethods DM;
-        bool SVG = false;
+        Pen pen = new Pen(Color.Black);
 
         public ShapeDrawingForm()
         {
             MenuStrip menuStrip = new MenuStrip();// korter gemaakt
 
             ToolStripDropDownItem menu = new ToolStripMenuItem("File");// ook korter gemaakt
-            menu.DropDownItems.Add("Open...", null, openFileHandler);
-            menu.DropDownItems.Add("Export...", null, exportHandler);
+            menu.DropDownItems.Add("Open... & draw Canvas", null, openFileHandler);
+            menu.DropDownItems.Add("Export to SVG", null, exportHandler);
             menu.DropDownItems.Add("Exit", null, closeHandler);
-            menu.DropDownItems.Add("Switch Canvas and SVG", null, SwitchHandler);
             menuStrip.Items.Add(menu);
 
             Controls.Add(menuStrip);
@@ -43,10 +42,6 @@ namespace ShapeDrawing
             Close();
         }
 
-        void SwitchHandler(object sender, EventArgs e)
-        {
-           SVG = !SVG;
-        }
         // What to do when the user opens a file
         private void openFileHandler(object sender, EventArgs e)
         {
@@ -75,7 +70,7 @@ namespace ShapeDrawing
                 {
                     // Insert code here that generates the string of LaTeX
                     //   commands to draw the shapes
-                    Pen pen = new Pen(Color.Black);
+                    
                     DM = new DrawSVG();
                     foreach (Shape shape in shapes)
                         shape.Draw(DM, pen);
@@ -83,13 +78,13 @@ namespace ShapeDrawing
                     {            
                         //Write strings to the file here using:
                         writer.WriteLine("<?xml version=\"1.0\" standalone=\"no\"?>");
-                        writer.WriteLine("< !DOCTYPE svg PUBLIC \" -//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\" >");
-                        writer.WriteLine("< svg xmlns = \"http://www.w3.org/2000/svg\" version = \"1.1\" > ");
+                        writer.WriteLine("<!DOCTYPE svg PUBLIC \" -//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\" >");
+                        writer.WriteLine("<svg xmlns = \"http://www.w3.org/2000/svg\" version = \"1.1\" > ");
                         foreach (string x in DrawSVG.text)
                         {
                             writer.WriteLine(x);
                         }
-                        writer.WriteLine("</ svg >");
+                        writer.WriteLine("</svg >");
                         writer.Close();    
                     }
                 }
@@ -99,16 +94,7 @@ namespace ShapeDrawing
         private void OnPaint(object sender, PaintEventArgs e)
         {
             // Draw all the shapes
-            Pen pen = new Pen(Color.Black); // pen toegevoegd
-            if (SVG)
-            {
-                DM = new DrawSVG();              
-            }
-            else
-            {
-                DM = new DrawCanvas(e.Graphics, pen);
-            }
-            
+            DM = new DrawCanvas(e.Graphics, pen);
             foreach (Shape shape in shapes)
                 shape.Draw(DM, pen);
         }        
