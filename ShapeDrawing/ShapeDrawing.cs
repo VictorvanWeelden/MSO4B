@@ -9,7 +9,9 @@ namespace ShapeDrawing
     public class ShapeDrawingForm : Form
     {
         private List<Shape> shapes;
-        public DrawMethods DM;   
+        public DrawMethods DM;
+        RadioButton Canvas_SVG;
+        bool SVG = false;
 
         public ShapeDrawingForm()
         {
@@ -19,6 +21,7 @@ namespace ShapeDrawing
             menu.DropDownItems.Add("Open...", null, openFileHandler);
             menu.DropDownItems.Add("Export...", null, exportHandler);
             menu.DropDownItems.Add("Exit", null, closeHandler);
+            menu.DropDownItems.Add("Switch Canvas and SVG", null, SwitchHandler);
             menuStrip.Items.Add(menu);
 
             Controls.Add(menuStrip);
@@ -41,6 +44,10 @@ namespace ShapeDrawing
             Close();
         }
 
+        void SwitchHandler(object sender, EventArgs e)
+        {
+           SVG = !SVG;
+        }
         // What to do when the user opens a file
         private void openFileHandler(object sender, EventArgs e)
         {
@@ -82,13 +89,13 @@ namespace ShapeDrawing
         {
             // Draw all the shapes
             Pen pen = new Pen(Color.Black); // pen toegevoegd
-            if (true)
+            if (SVG)
             {
-                DM = new DrawCanvas(e.Graphics, pen);
+                DM = new DrawSVG();              
             }
             else
             {
-                DM = new DrawSVG();
+                DM = new DrawCanvas(e.Graphics, pen);
             }
             
             foreach (Shape shape in shapes)
