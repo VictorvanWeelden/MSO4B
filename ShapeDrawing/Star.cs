@@ -6,7 +6,6 @@ namespace ShapeDrawing
     public class Star : Shape
     {
         public DrawMethods DM;
-        //DrawSVG dm = new DrawSVG();
         private int x;
         private int y;
         private int width;
@@ -30,15 +29,12 @@ namespace ShapeDrawing
             {
                 DM.DrawLines(pen, pts[i].X, pts[i].Y,
                        pts[(i + 1) % numPoints].X, pts[(i + 1) % numPoints].Y);
-                /*Canvas.DrawLine(pen, pts[i].X, pts[i].Y,
-                       pts[(i + 1) % numPoints].X, pts[(i + 1) % numPoints].Y);*/
             }
 
         }
 
         void CalculatePoints()// Calculate methode toegevoegd
         {
-
             double rx = width / 2;
             double ry = height / 2;
             double cx = x + rx;

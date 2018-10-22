@@ -10,7 +10,6 @@ namespace ShapeDrawing
     {
         private List<Shape> shapes;
         public DrawMethods DM;
-        RadioButton Canvas_SVG;
         bool SVG = false;
 
         public ShapeDrawingForm()
