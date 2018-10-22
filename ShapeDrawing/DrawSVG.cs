@@ -19,7 +19,7 @@ namespace ShapeDrawing
         }
         public void DrawRectangle(Pen pen, int x, int y, int w, int h)
         {
-            regels = "<rect x = \"" + x + "\" y = \"" + y + "\" width = \"" + w + "\" height = \"" + h + " \"style = \"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(0,0,0)\" />";
+            regels = "<rect x = \"" + x + "\" y = \"" + y + "\" width = \"" + w + "\" height = \"" + h + " \"style = \"fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)\" />";
             text.Add(regels);
         }
         public void DrawCircle(Pen pen, int x, int y, int r)
