@@ -5,8 +5,8 @@ namespace ShapeDrawing
 {
     class Rectangle : Shape
     {
-        public DrawMethods DM;
-        public DrawSVG dm = new DrawSVG();
+       // public DrawMethods DM;
+       // public DrawSVG dm = new DrawSVG();
         private int x;
         private int y;
         private int width;
@@ -20,14 +20,14 @@ namespace ShapeDrawing
             this.height = height;
         }
 
-        public void Draw(Graphics Canvas, Pen pen)
+        public void Draw(DrawMethods DM, Pen pen)
         {
-            //DM.DrawRectangle(pen, x, y, height, width);
-            Canvas.DrawLine(pen, x, y, x + width, y);
+            DM.DrawRectangle(pen, x, y, height, width);
+            /*Canvas.DrawLine(pen, x, y, x + width, y);
             Canvas.DrawLine(pen, x + width, y, x + width, y + height);
             Canvas.DrawLine(pen, x + width, y + height, x, y + height);
-            Canvas.DrawLine(pen, x, y + height, x, y);
-            dm.DrawRectangle(pen, x, y, width, height);
+            Canvas.DrawLine(pen, x, y + height, x, y);*/
+            //dm.DrawRectangle(pen, x, y, width, height);
         }
     }
 }

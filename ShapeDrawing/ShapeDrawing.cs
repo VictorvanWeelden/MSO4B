@@ -8,7 +8,8 @@ namespace ShapeDrawing
 {
     public class ShapeDrawingForm : Form
     {
-        private List<Shape> shapes;        
+        private List<Shape> shapes;
+        public DrawMethods DM;   
 
         public ShapeDrawingForm()
         {
@@ -81,8 +82,17 @@ namespace ShapeDrawing
         {
             // Draw all the shapes
             Pen pen = new Pen(Color.Black); // pen toegevoegd
+            if (true)
+            {
+                DM = new DrawCanvas(e.Graphics, pen);
+            }
+            else
+            {
+                DM = new DrawSVG();
+            }
+            
             foreach (Shape shape in shapes)
-                shape.Draw(e.Graphics, pen);
+                shape.Draw(DM, pen);
         }        
     }
 }

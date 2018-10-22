@@ -23,15 +23,15 @@ namespace ShapeDrawing
             pts = new Point[numPoints];
         }
 
-        public void Draw(Graphics Canvas, Pen pen)// parameter pen toegevoegd
+        public void Draw(DrawMethods DM, Pen pen)// parameter pen toegevoegd
         {
             CalculatePoints();
             for (int i = 0; i < numPoints; i++)
             {
-                /*dm.DrawLines(pen, pts[i].X, pts[i].Y,
-                       pts[(i + 1) % numPoints].X, pts[(i + 1) % numPoints].Y);*/
-                Canvas.DrawLine(pen, pts[i].X, pts[i].Y,
+                DM.DrawLines(pen, pts[i].X, pts[i].Y,
                        pts[(i + 1) % numPoints].X, pts[(i + 1) % numPoints].Y);
+                /*Canvas.DrawLine(pen, pts[i].X, pts[i].Y,
+                       pts[(i + 1) % numPoints].X, pts[(i + 1) % numPoints].Y);*/
             }
 
         }
