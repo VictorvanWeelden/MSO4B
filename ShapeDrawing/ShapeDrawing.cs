@@ -66,7 +66,7 @@ namespace ShapeDrawing
             Stream stream;
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-            saveFileDialog.Filter = "TeX files|(*.tex)";
+            saveFileDialog.Filter = "SVG files|*.svg";
             saveFileDialog.RestoreDirectory = true;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -75,10 +75,22 @@ namespace ShapeDrawing
                 {
                     // Insert code here that generates the string of LaTeX
                     //   commands to draw the shapes
+                    Pen pen = new Pen(Color.Black);
+                    DM = new DrawSVG();
+                    foreach (Shape shape in shapes)
+                        shape.Draw(DM, pen);
                     using (StreamWriter writer = new StreamWriter(stream))
-                    {
-                        // Write strings to the file here using:
-                        //   writer.WriteLine("Hello World!");
+                    {            
+                        //Write strings to the file here using:
+                        writer.WriteLine("<?xml version=\"1.0\" standalone=\"no\"?>");
+                        writer.WriteLine("< !DOCTYPE svg PUBLIC \" -//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\" >");
+                        writer.WriteLine("< svg xmlns = \"http://www.w3.org/2000/svg\" version = \"1.1\" > ");
+                        foreach (string x in DrawSVG.text)
+                        {
+                            writer.WriteLine(x);
+                        }
+                        writer.WriteLine("</ svg >");
+                        writer.Close();    
                     }
                 }
             }
