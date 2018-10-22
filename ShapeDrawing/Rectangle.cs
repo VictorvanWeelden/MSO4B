@@ -6,6 +6,7 @@ namespace ShapeDrawing
     class Rectangle : Shape
     {
         public DrawMethods DM;
+        public DrawSVG dm = new DrawSVG();
         private int x;
         private int y;
         private int width;
@@ -26,6 +27,7 @@ namespace ShapeDrawing
             Canvas.DrawLine(pen, x + width, y, x + width, y + height);
             Canvas.DrawLine(pen, x + width, y + height, x, y + height);
             Canvas.DrawLine(pen, x, y + height, x, y);
+            dm.DrawRectangle(pen, x, y, width, height);
         }
     }
 }
